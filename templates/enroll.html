@@ -1,0 +1,181 @@
+
+{%extends 'bootstrap.html'%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+
+  </head>
+  {%block content%}
+  <body style="background-color:#c2e3ff">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light;">
+        <div class="container-fluid" style="background-color:#0d6efd">
+          <a class="navbar-brand" href="{%url 'home'%}">
+            <img src="https://www.uaar.edu.pk/images/logo.png" style=" height: 60px; border-radius: 50%; ">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width:100%">
+              <li class="nav-item" style="width:10%">
+                <a class="nav-link" href="{%url 'home'%}"><b>Home</b></a>
+              </li>
+              <li class="nav-item"style="width:15%">
+                <a class="nav-link" href="{%url 'enroll'%}">  <b>Enroll New</b> </a>
+              </li>
+              <li class="nav-item"style="width:15%">
+                <a class="nav-link" href="{%url 'viewall'%}" > <b>View List</b> </a>
+              </li>
+              <li class="nav-item"style="width:20%">
+                <a class="nav-link" href="{%url 'new'%}"> <b>Start Scanning</b> </a>
+              </li>
+
+
+     <li class="nav-item"style="width:20%">
+                <a class="nav-link" href="{%url 'about'%}"> <b>About Us</b> </a>
+              </li>
+
+
+
+<li class="nav-item"style="width:15%">
+                <a class="nav-link" href="{%url 'logout'%}"> <b>Logout</b> </a>
+              </li>
+
+
+
+
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown"style="float:right;">
+
+
+
+    </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+    <div style="margin-top:2%">
+
+
+    <form method="POST" enctype="multipart/form-data">
+      {%csrf_token%}
+      <section class="vh-100" style="background-color: #2779e2;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+
+        <h1 class="text-white mb-4">Enroll New</h1>
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">First Name</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input type="text" class="form-control form-control-lg" name="f_name" />
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Last Name</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input type="text" class="form-control form-control-lg"name="l_name" />
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">ARID NO</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input class="form-control form-control-lg" name="arid_no"  pattern="[0-9]{3}*\-[A-R]{4}*\-[0-9]{3-4}" required/>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+
+                <h6 class="mb-0">Upload Image</h6>
+
+              </div>
+              <div class="col-md-9 pe-5">
+
+                <input class="form-control form-control-lg" id="formFileLg" name="image"type="file" />
+                <div class="small text-muted mt-2">Upload your Image. Max file
+                  size 50 MB</div>
+
+              </div>
+            </div>
+
+            <hr class="mx-n3">
+            {%for messages in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" id="message" role="alert">
+            {{messages}}
+            <button type="button" onclick="showDiv()" class="btn-close" data-dismiss="alert" >
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {%endfor%}
+
+            <div class="px-5 py-4">
+              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+    </form>
+
+    </div>
+
+    <script>
+
+         function showDiv(){
+             document.getElementById("message").style.display = "none";
+         }
+
+</script>
+    {%endblock%}
+
+  </body>
+</html>

@@ -1,0 +1,253 @@
+{%extends 'bootstrap.html'%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>authorization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="about.css">
+    <style>
+
+
+* {
+    font-family: Oswald, sans-serif !important;
+}
+
+
+
+body {
+    background-color: #c2e3ff;
+}
+
+
+
+h1 {
+    color: #1430c5;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+h2 {
+    color: rgb(41, 39, 39);
+    margin: 16px 0;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+h3 {
+    color: #1430c5;
+    margin: 10px 0;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+p {
+
+  font-size: 16px;
+  color: #000;
+}
+
+    </style>
+</head>
+{%block content%}
+<body style="background-color:#BFE0FC">
+
+    <section class="header mb-5">
+
+      <div class="container">
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light;">
+            <div class="container-fluid" style="background-color:#0d6efd">
+              <a class="navbar-brand" href="{%url 'home'%}">
+                <img src="https://www.uaar.edu.pk/images/logo.png" style=" height: 60px; border-radius: 50%; ">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width:100%">
+                  <li class="nav-item" style="width:10%">
+                    <a class="nav-link" href="{%url 'home'%}"><b>Home</b></a>
+                  </li>
+                  <li class="nav-item"style="width:15%">
+                    <a class="nav-link" href="{%url 'enroll'%}">  <b>Enroll New</b> </a>
+                  </li>
+                  <li class="nav-item"style="width:15%">
+                    <a class="nav-link" href="{%url 'viewall'%}" > <b>View List</b> </a>
+                  </li>
+                  <li class="nav-item"style="width:20%">
+                    <a class="nav-link" href="{%url 'new'%}"> <b>Start Scanning</b> </a>
+                  </li>
+
+
+         <li class="nav-item"style="width:20%">
+                    <a class="nav-link" href="{%url 'about'%}"> <b>About Us</b> </a>
+                  </li>
+
+
+
+        <li class="nav-item"style="width:15%">
+                    <a class="nav-link" href="{%url 'logout'%}"> <b>Logout</b> </a>
+                  </li>
+
+
+
+
+                  <div class="btn-group" role="group" aria-label="Button group with nested dropdown"style="float:right;">
+
+
+
+        </div>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+
+
+</div>
+    </section>
+
+
+    <section class="supervisor ">
+        <div class="container text-center">
+
+            <h1>Our Supervisor</h1>
+            <img src="https://www.uaar.edu.pk/media/profile/tariq-10072020.jpg" alt=""   style="border-radius: 50%">
+            <h2>Dr. Tariq Ali</h2>
+            <h3 style="color: #1484E5;">Assistant Professor</h3>
+            <p style="font-family: Oswald, sans-serif !important">Our supervisor Dr. Tariq Ali help us in every Module for successfully compilation of our Project "Visitor Identification And Tracking Using Image Processing"Reviewing progress reports from each team member to track the status of each task </p>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container text-center">
+
+            <h1>Our Team</h1>
+            <p style="font-family: Oswald, sans-serif !important">We Are a Team Of Three Group Members For Our Final Year Project</p>
+
+            <div class="row ">
+                <div class="col-md-4 col-12 ourteam" style="padding-top:0.06in">
+                    <img width="40%";height="40%" src="https://scontent.fisb16-1.fna.fbcdn.net/v/t39.30808-6/279368767_1927546997445677_9017937246955668615_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF1teY5hgoyuy74IBrRDQdU5z82cEK60bbnPzZwQrrRti-plGmzKoL2TKRFf1MIAi5F63jvrFBnMqfeemaAN0nf&_nc_ohc=kh_ktMz_jFcAX-nyvKo&_nc_ht=scontent.fisb16-1.fna&oh=00_AT_PmI5dFDUoc3msEJ9_7CUF4T1E4YNYjUfaP4XxEwAMOg&oe=62B6D1B0" alt="" style="border-radius: 50%">
+                    <h2>M.Umar Hassan</h2>
+                    <h3 style="color: #1484E5;">18-ARID-2535</h3>
+                    <p style="font-family: Oswald, sans-serif !important">We Developed This Project For Better Security Purpose. This Syestem Can Be Debloyed At Senesitive Areas.</p>
+
+                </div>
+
+                <div class="col-md-4 col-12"  style="padding-top:0.06in">
+                    <img width="40%";height="40%"src=" {% static 'page/images/Fahad.jpeg' %}" alt=""  style="border-radius: 50%">
+                    <h2>Fahad Saleem</h2>
+                    <h3 style="color: #1484E5;">18-ARID-2461</h3>
+                    <p style="font-family: Oswald, sans-serif !important">We Developed This Project For Better Security Purpose. This Syestem Can Be Debloyed At Senesitive Areas.</p>
+
+                </div>
+
+                <div class="col-md-4 col-12"  style="padding-top:0.06in">
+                    <img width="40%";height="40%"  src="{% static 'page/images/Ali.jpeg' %}" alt="" style="border-radius: 50%">
+                    <h2>Ali Fayyaz Durrani</h2>
+                    <h3 style="color: #1484E5;">18-ARID-2446</h3>
+
+                    <p style="font-family: Oswald, sans-serif !important">We Developed This Project For Better Security Purpose. This Syestem Can Be Debloyed At Senesitive Areas.</p>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+     <!-- Footer -->
+  <footer  class="text-center text-white" style="background-color: #0d6efd">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <a href="#">
+            <img src="https://www.uaar.edu.pk/images/logo.png" style=" height: 100px; border-radius: 50%; margin-right: 900px; margin-bottom: -124px;">
+          </a>
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+
+          <div class="col-md-2">
+
+            <h6 class="text-uppercase font-weight-bold" >
+              <a href="{%url 'home'%}"class="text-white">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{%url 'enroll'%}" class="text-white">Enroll New</a>
+            </h6>
+          </div>
+
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{%url 'viewall'%}" class="text-white">View List</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{%url 'about'%}" class="text-white">About Us</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-5" />
+
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <p>
+              "Visitor Identification And Tracking Using Image Processing"Purely Developed for University Institute For Infromation Technology (UIIT).
+              This project is Develped Under The Supervision Of  <b>DR.Tariq Ali.</b>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2022 Copyright- All Right Reserved
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+{%endblock%}
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</html>

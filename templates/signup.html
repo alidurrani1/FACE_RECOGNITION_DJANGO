@@ -1,0 +1,98 @@
+{%extends 'bootstrap.html'%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+     <link rel="stylesheet" href="styles.css">
+    <title></title>
+  </head>
+    {%block content%}
+  <body style="background-color:#c2e3ff">
+
+
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+          background-image: url('https://cdn.pixabay.com/photo/2018/09/27/09/22/artificial-intelligence-3706562__340.jpg');
+          height: 300px;
+          "></div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <form method="POST">
+                {%csrf_token%}
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="form3Example1" name="f_name" class="form-control" />
+                    <label class="form-label" for="form3Example1">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="form3Example2" name="l_name" class="form-control" />
+                    <label class="form-label" for="form3Example2">Last name</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="text" name="User_name" id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Username</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" name="passwd" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" name="passwd_c" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Confirm Password</label>
+              </div>
+              {%for messages in messages%}
+              <div id="messages_div" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:block">
+      {{messages}}
+      <button id="check" onclick="removeis()" type="button" class="btn-close" data-dismiss="alert" >
+      <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      {%endfor%}
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+<script>
+
+function removeis(){
+    document.getElementById("messages_div").style.display = "none";
+
+}
+
+
+</script>
+
+
+    {%endblock%}
+  </body>
+</html>

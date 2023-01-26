@@ -1,0 +1,180 @@
+{%extends 'bootstrap.html'%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="app.js"></script>
+    <style media="screen">
+
+    .navbar{
+        background-color:#90CAF9 !important;
+    }
+
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  {%block content%}
+  <body style="background-color:#c2e3ff">
+    <body style="background-color:#c2e3ff">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light;">
+          <div class="container-fluid" style="background-color:#0d6efd">
+            <a class="navbar-brand" href="{%url 'home'%}">
+              <img src="https://www.uaar.edu.pk/images/logo.png" style=" height: 60px; border-radius: 50%; ">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width:100%">
+                <li class="nav-item" style="width:10%">
+                  <a class="nav-link" href="{%url 'home'%}"><b>Home</b></a>
+                </li>
+                <li class="nav-item"style="width:15%">
+                  <a class="nav-link" href="{%url 'enroll'%}">  <b>Enroll New</b> </a>
+                </li>
+                <li class="nav-item"style="width:15%">
+                  <a class="nav-link" href="{%url 'viewall'%}" > <b>View List</b> </a>
+                </li>
+                <li class="nav-item"style="width:20%">
+                  <a class="nav-link" href="{%url 'new'%}"> <b>Start Scanning</b> </a>
+                </li>
+
+
+       <li class="nav-item"style="width:20%">
+                  <a class="nav-link" href="{%url 'about'%}"> <b>About Us</b> </a>
+                </li>
+
+
+
+  <li class="nav-item"style="width:15%">
+                  <a class="nav-link" href="{%url 'logout'%}"> <b>Logout</b> </a>
+                </li>
+
+
+
+
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown"style="float:right;">
+
+
+
+      </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+<br><br>
+
+
+
+  <table class="table" style="background-color:#90CAF9; text-align:center">
+    <tbody>
+      <tr>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>ARID NO</th>
+        <th>IMAGE</th>
+      </tr>
+      {%for component in all%}
+      <tr>
+        <td>{{component.first_name}}</td>
+    <td>{{component.last_name}}</td>
+    <td>{{component.Arid_no}}</td>
+    <td>{{component.img}}</td>
+    <td>   <ul>
+      <li class="nav-item dropdown"style="width:200px">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           More
+         </a>
+         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <li><a class="dropdown-item" href=" {% url 'delete' auth_id=component.id %}">Delete</a></li>
+
+           <li><hr class="dropdown-divider"></li>
+
+         </ul>
+       </li>
+    </ul>
+    </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  <!-- Footer -->
+  <footer  class="text-center text-white" style="background-color: #0d6efd">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <a href="#">
+            <img src="https://www.uaar.edu.pk/images/logo.png" style=" height: 100px; border-radius: 50%; margin-right: 900px; margin-bottom: -124px;">
+          </a>
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+
+          <div class="col-md-2">
+
+            <h6 class="text-uppercase font-weight-bold" >
+              <a href="{%url 'home'%}"class="text-white">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{%url 'enroll'%}" class="text-white">Enroll New</a>
+            </h6>
+          </div>
+
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{%url 'viewall'%}" class="text-white">View List</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="{%url 'about'%}" class="text-white">About Us</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-5" />
+
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <p>
+              "Visitor Identification And Tracking Using Image Processing"Purely Developed for University Institute For Infromation Technology (UIIT).
+              This project is Develped Under The Supervision Of  <b>DR.Tariq Ali.</b>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2022 Copyright- All Right Reserved
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  {%endblock%}
+  </body>
+
+</html>

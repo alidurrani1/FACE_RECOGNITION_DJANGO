@@ -1,0 +1,110 @@
+{%extends 'bootstrap.html'%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+   <script src="app.js"></script>
+    <title></title>
+
+
+
+
+  </head>
+{%block content%}
+  <body style="background-color:#c2e3ff">
+
+<div class="header "  style="padding: 5% 0;">
+  <div class="container ">
+    <div class="row ">
+      <div class="col-md-6 col-12 " >
+        <img src="https://www.uaar.edu.pk/images/logo.png" style=" height: 100px; border-radius: 50%; ">
+      </div>
+
+
+      <div class="col-md-6 col-12 d-flex align-items-center" >
+
+      <h1  ><b> Welcome</b></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      <section class="vh-100" >
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+          <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-3 fw-bold ls-tight">
+                  Visitor Identification <br />
+                  <span class="text-primary">And Tracking </span>
+                </h1>
+                <p style="color: hsl(217, 10%, 50.8%)">
+                  Many people are familiar with face recognition technology through the FaceID used to unlock iPhones (however, this is only one application of face recognition). Typically, facial recognition does not rely on a massive database of photos to determine an individual’s identity — it simply identifies and recognizes one person as the sole owner of the device, while limiting access to others.
+
+                  Beyond unlocking phones, facial recognition works by matching the faces of people walking past special cameras, to images of people on a watch list. The watch lists can contain pictures of anyone, including people who are not suspected of any wrongdoing, and the images can come from anywhere — even from our social media accounts?
+                </p>
+              </div>
+
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card">
+                  <div class="card-body py-5 px-md-5">
+                    <form method="POST">
+                      {%csrf_token%}
+                      <!-- Email input -->
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Username</label>
+                        <input type="text" id="username" class="form-control"  name="username"/>
+
+                      </div>
+
+                      <!-- Password input -->
+                      <div class="form-outline mb-4">
+                          <label class="form-label" for="form3Example4">Password</label>
+                        <input type="password" id="form3Example4" class="form-control"  name="passwd"/>
+
+                      </div>
+
+                      <!-- Submit button -->
+                      <button type="submit" onclick="testVariable()" style="width:100%; margin-top:5%" class="btn btn-primary btn-block mb-4">
+                        Sign in
+                      </button>
+                        <div class="form-outline mb-4" style="color: hsl(217, 10%, 50.8%); text-align:center;">
+                          OR
+                        </div>
+                        <a class="btn btn-primary" style="width:100%"href="signup" role="button">Sign Up</a>
+                        <br><br>
+                        {%for messages in messages%}
+                        <div id="messages_div" class="alert alert-warning alert-dismissible fade show" role="alert" style="display:block">
+                {{messages}}
+                <button id="check" onclick="removeDIV()" type="button" class="btn-close" data-dismiss="alert" >
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                {%endfor%}
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <script>
+          function removeDIV(){
+              document.getElementById("messages_div").style.display = "none";
+
+          }
+
+      </script>
+
+{%endblock%}
+  </body>
+
+</html>
